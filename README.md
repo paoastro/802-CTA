@@ -1,3 +1,3 @@
-# 802-sp23-development
+# 802-CTA
 
-Internal repository to develop computational thinking problems and solutions
+8.02 computational thinking activites
