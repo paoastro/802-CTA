@@ -5,6 +5,15 @@ import electrostatics
 from electrostatics import PointCharge, ElectricField, Potential, GaussianCircle,LineCharge
 from electrostatics import finalize_plot
 
+def calculate_E(q,r_S,r_P): 
+    e0 = 8.854187817e-12  
+    k = 1.0 / (4 * pi * e0)
+    rSP = sqrt(((r_P[0]-r_S[0])**2) + ((r_P[1]-r_S[1])**2) + ((r_P[2]-r_S[2])**2))
+    E_x = k*q *( (r_P[0]-r_S[0]) / rSP**3) 
+    E_y = k*q *( (r_P[1]-r_S[1]) / rSP**3) 
+    E_z = k*q *( (r_P[2]-r_S[2]) / rSP**3)      
+    return([E_x,E_y,E_z])
+
 def draw_E_and_V(charges,locations,background=False,circlesize=True,lines=True):
 
     XMIN, XMAX = -40, 40
